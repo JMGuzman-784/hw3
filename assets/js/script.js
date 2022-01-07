@@ -25,18 +25,40 @@ function generatePassword() {
   let trueNumbers = confirm("Would you like to use numbers?");
   let trueSpecChar = confirm("Would you like to use special characters?");
 
+  if (trueLc == false && trueUp == false && trueNumbers == false && trueSpecChar == false) {
+    alert("Please choose atleast one type of character.");
+    generatePassword();
+  }
+
   // Loop through array of letters
   if (trueLc) {
     wordBank += lcLetters;
+    let lccharacter = lcLetters[Math.floor(Math.random() * lcLetters.length)];
+    password.push(lccharacter)
+    passwordLength--
   }
   if (trueUp) {
     wordBank += ucLetters;
+    let uccharacter = ucLetters[Math.floor(Math.random() * ucLetters.length)];
+    password.push(uccharacter)
+    passwordLength--
   }
   if (trueNumbers) {
     wordBank += pwNumbers;
+    let pwNumber = pwNumbers[Math.floor(Math.random() * pwNumbers.length)];
+    password.push(pwNumber)
+    passwordLength--
   }
   if (trueSpecChar) {
     wordBank += spCharacters;
+    let spcharacter = spCharacters[Math.floor(Math.random() * spCharacters.length)];
+    password.push(spcharacter)
+    passwordLength--
+  }
+  // 
+  function generateRandom(character) {
+    let index = Math.floor(Math.random() * wordBank.length);
+    return character[index];
   }
 
   for (let i = 0; i < passwordLength; i++ ) {
@@ -45,10 +67,6 @@ function generatePassword() {
   }
   // Return a final password as a string
   return password.join("");
-}
-function generateRandom(character) {
-  let index = Math.floor(Math.random() * spCharacters.length);
-  return character[index];
 }
 
 // Write password to the #password input
