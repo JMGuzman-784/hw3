@@ -11,4 +11,4 @@ Small functional box that generates and provides a password with the chozen opti
 ## Link to Password Generator
 
 * Here is the link : [](https://github.com/JMGuzman-784/hw3)
-* Here is the pages: [](https://jmguzman-784.github.io/hw3/)
+* Here is the pages : [](https://jmguzman-784.github.io/hw3/)
